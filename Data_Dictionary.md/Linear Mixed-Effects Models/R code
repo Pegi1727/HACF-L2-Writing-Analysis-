@@ -1,31 +1,67 @@
-import pandas as pd
+# ============================================================
+# HACF L2 Writing Analysis
+# Reshape longitudinal dataset from wide to long format
+# ============================================================
 
-# ۱. بارگذاری داده‌ها
-df = pd.read_csv("data/download_Full_Longitudinal_Dataset_AI_Writing.csv")
+# -----------------------------
+# 1) Load required packages
+# -----------------------------
+library(tidyverse)
 
-# ۲. مشخص کردن ستون‌هایی که نباید تغییر کنند (ثابت‌ها)
-id_vars = ["Participant_ID", "Final_Human_Rating", "Status"]
+# -----------------------------
+# 2) Set file paths
+# -----------------------------
+input_file  <- "data/download_Full_Longitudinal_Dataset_AI_Writing.csv"
+output_file  <- "data/download_Full_Longitudinal_Dataset_AI_Writing_long.csv"
 
-# ۳. لیست کردن ستون‌های تکرارشونده طولی
-value_vars = [col for col in df.columns if col not in id_vars]
+# -----------------------------
+# 3) Read the wide-format data
+# -----------------------------
+df <- read_csv(input_file, show_col_types = FALSE)
 
-# ۴. تبدیل داده از Wide به فرمت میانی طولی
-df_melted = df.melt(
-    id_vars=id_vars, 
-    value_vars=value_vars, 
-    var_name="Metric_Stage", 
-    value_name="Value"
-)
+# -----------------------------
+# 4) Check structure
+# -----------------------------
+print(glimpse(df))
 
-# ۵. تفکیک نام شاخص و زمان (مثال: MTLD_Pre به شاخص MTLD و زمان Pre)
-df_melted[["Metric", "Stage"]] = df_melted["Metric_Stage"].str.rsplit("_", n=1, expand=True)
+# Expected columns:
+# Participant_ID
+# MTLD_Pre, MTLD_V1, MTLD_V2, MTLD_V3
+# LSA_Pre, LSA_V1, LSA_V2, LSA_V3
+# PSI_Pre, PSI_V1, PSI_V2, PSI_V3
+# RAR_Pre, RAR_V1, RAR_V2, RAR_V3
+# Final_Human_Rating
+# Status
 
-# ۶. سازماندهی نهایی به طوری که هر شاخص یک ستون مجزا داشته باشد
-df_long = df_melted.pivot(
-    index=["Participant_ID", "Final_Human_Rating", "Status", "Stage"],
-    columns="Metric",
-    values="Value"
-).reset_index()
+# -----------------------------
+# 5) Reshape from wide to long
+# -----------------------------
+df_long <- df %>%
+  pivot_longer(
+    cols = matches("^(MTLD|LSA|PSI|RAR)_(Pre|V1|V2|V3)$"),
+    names_to = c("Metric", "Stage"),
+    names_pattern = "^(MTLD|LSA|PSI|RAR)_(Pre|V1|V2|V3)$",
+    values_to = "Score"
+  ) %>%
+  pivot_wider(
+    names_from = Metric,
+    values_from = Score
+  ) %>%
+  mutate(
+    Stage = factor(Stage, levels = c("Pre", "V1", "V2", "V3"), ordered = TRUE),
+    Status = factor(Status)
+  ) %>%
+  arrange(Participant_ID, Stage)
 
-# نمایش نمونه‌ای از داده‌های نهایی تغییر شکل یافته
-print(df_long.head())
+# -----------------------------
+# 6) Inspect result
+# -----------------------------
+print(head(df_long, 12))
+print(glimpse(df_long))
+
+# -----------------------------
+# 7) Save long-format dataset
+# -----------------------------
+write_csv(df_long, output_file)
+
+cat("\nDone! Long-format dataset saved to:\n", output_file, "\n")
