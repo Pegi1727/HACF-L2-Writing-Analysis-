@@ -93,21 +93,6 @@ A longitudinal analysis of 30 EFL learners over four stages (Pre, V1, V2, V3) re
 *(Visualizations for these results can be found in the `/figures` directory or viewed in the individual README within that folder.)*
 
 ---
-
-## Data Usage & Analysis
-
-The data is provided in **wide format**. For statistical modeling (LMM/GLMM), researchers are encouraged to reshape the data to **long format**. 
-
-Example R Code snippet:
-```r
-# Convert wide to long for LMM analysis
-library(tidyverse)
-df_long <- read.csv("data/download_Full_Longitudinal_Dataset_AI_Writing.csv") %>%
-  pivot_longer(cols = -c(Participant_ID, Final_Human_Rating, Status),
-names_to = c(".value", "Stage"),
-names_sep = "_")
-
----
 contact details: Pegah.merrikhiii@gmail.com
 whatsapp +905369574614
 https://www.linkedin.com/in/dr-pegah-merrikhi-98a7aa105/tr?originalSubdomain=tr
