@@ -53,7 +53,7 @@ The following figures present the main visual results of the HACF L2 Writing Ana
 This repository contains the dataset, analytical framework (HACF), and visual results for the longitudinal study exploring the intersection of Generative AI (GenAI), linguistic identity, and writing authenticity in EFL contexts.
 
 **Author:** Dr. Pegah Merrikhi  
-**Submission ID:** ETAL-D-26-00445  
+------  
 
 ## Project Overview
 
