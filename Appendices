@@ -1,0 +1,66 @@
+Appendices
+Appendix A. Prompt Sophistication Index (PSI) Rubric
+The Prompt Sophistication Index (PSI) was assessed using a four-dimensional rubric. Each dimension was scored on a three-point scale ranging from 0 to 2.
+ 
+Dimension	Score 0: Low	Score 1: Medium	Score 2: High
+Contextualization	No context is provided (e.g., “Fix this.”).	Basic context is provided (e.g., “This is for an essay.”).	Rich contextual information is provided, including the target audience, goals, and tone.
+Metacognitive Orientation	No reference is made to learning goals.	A general request for improvement is made.	The learner requests specific explanations of why or how a change should be made.
+Rhetorical Awareness	Text structure is disregarded.	Basic awareness of paragraphing is demonstrated.	The learner explicitly focuses on cohesion, flow, and academic ethos.
+Revision Control	The learner accepts all AI-generated output.	The learner requests simple modifications.	The learner critically questions and evaluates the AI’s suggestions.
+________________________________________
+Appendix B. Sample Interaction Transcripts and Coding
+Appendix B. Sample Interaction Transcripts
+Case 1. High Writing Gain: The Co-regulatory Loop
+Learner:
+“I have written the introduction for my essay on ‘AI in Education’. The AI suggested replacing ‘very helpful’ with ‘instrumental’. I feel ‘instrumental’ is too formal for this specific section. Can you provide three alternatives that maintain a professional tone but are less rigid, and explain the nuance of each?”
+Coding: High PSI: Metalinguistic Control and Rhetorical Awareness
+ChatGPT-4:
+“Certainly. 1. ‘Pivotal’ (emphasizes importance), 2. ‘Advantageous’ (emphasizes benefit), 3. ‘Effective’ (emphasizes result). ‘Pivotal’ is strong but less stiff than ‘instrumental’.”
+Learner:
+“I’ll go with ‘pivotal’ for the second paragraph as it highlights the transformative role of AI, but I’ll keep my original phrasing in the first to maintain a natural flow.”
+Coding: Selective Integration: Low–Medium RAR / High Agency
+________________________________________
+Case 2. Low Writing Gain: The Passive Loop
+Learner:
+“Can you make this paragraph sound more academic? [Pastes Paragraph]”
+Coding: Low PSI: Functional Regulation Only
+ChatGPT-4:
+“[Provides a heavily rewritten version with complex vocabulary and restructured sentences.]”
+Learner:
+“Thanks! This looks great. I will use this version.”
+Coding: Uncritical Acceptance: High RAR / Low Agency
+Analytic Note:
+The learner bypassed the cognitive process of evaluation, leading to cognitive offloading and no actual improvement in their own lexical choice capability.
+________________________________________
+Case 3. The Paradox Case: High PSI but Low Gain
+Learner:
+“Analyze the cohesion of my third paragraph using LSA principles. I want to ensure the transition from the ‘challenge’ section to the ‘opportunity’ section is seamless. Please suggest a bridge sentence that employs a cohesive tie.”
+Coding: High PSI: Strategic Regulation
+ChatGPT-4:
+“Notwithstanding these systemic hurdles, a parallel opportunity emerges…”
+Learner:
+“Actually, I’ll just use the whole sentence you wrote; it sounds much better than anything I could do.”
+Coding: High RAR: The ‘Agency Collapse’ Point
+Analytic Note:
+Despite the learner’s ability to prompt strategically, the learner surrendered their agency at the point of integration. This case confirms that PSI without critical RAR does not necessarily lead to linguistic internalization or writing development.
+________________________________________
+Appendix C. Computational Metrics and Software Details
+The computational measures and statistical procedures were implemented as follows:
+Lexical Diversity:
+Lexical diversity was calculated using the Lex diversity package in R version 4.2.1. The selected measure was the Measure of Textual Lexical Diversity (MTLD).
+Semantic Alignment:
+Semantic alignment was processed using Coh-Metrix 4.0, standardized for academic corpora. The analysis focused on Latent Semantic Analysis (LSA).
+Linear Mixed-Effects Model Analysis:
+The longitudinal analyses were conducted in R using the lme4 and lmerTest packages. Restricted Maximum Likelihood (REML) was used for the estimation of variance components.
+Socio-Technical Setup:
+All learner–AI interactions were conducted using ChatGPT-4 (GPT-4-1106-preview) to ensure consistency in model temperature and response quality.
+________________________________________
+Appendix D. Supplementary Statistical Tables
+Table D1. Full LMM Coefficients for z_LSA and z_MTLD
+This table presents the complete set of coefficients from the linear mixed-effects models predicting standardized LSA (z_LSA) and MTLD (z_MTLD) scores. The table includes all fixed effects, including statistically nonsignificant predictors, together with their corresponding beta coefficients, t-values, and p-values.
+Table D2. Inter-Rater Reliability Analysis
+
+Reliability Measure	Result	Interpretation
+Cohen’s kappa (κ)	0.84	Excellent agreement between the two independent coders for PSI scoring
+The Cohen’s kappa coefficient of 0.84 indicates excellent agreement between the two independent coders involved in PSI scoring.
+
