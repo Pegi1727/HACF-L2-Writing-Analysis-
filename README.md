@@ -93,6 +93,28 @@ A longitudinal analysis of 30 EFL learners over four stages (Pre, V1, V2, V3) re
 *(Visualizations for these results can be found in the `/figures` directory or viewed in the individual README within that folder.)*
 
 ---
+
+## 📬 Contact
+
+**Dr. Pegah Merrikhi**
+Independent Researcher
+PhD in Applied Linguistics
+
+**Email:** [pegah.merrikhiii@gmail.com](mailto:pegah.merrikhiii@gmail.com)
+
+For questions regarding the **Multimodal Mapping Matrix (MMM)**, annotated corpus, analytical procedures, figures, supplementary materials, or potential research collaboration, please contact the author by email.
+
+---
+
+## 🔗 Research Resources
+
+* **GitHub Repository:** HACF-L2-Writing-Analysis-
+
+* **Permanent Research DOI:** https:// DOI: 10.5281/zenodo.21899855
+* **Researcher:** Dr. Pegah Merrikhi
+* **Affiliation:** Independent Researcher
+* **Field:** Applied Linguistics / Cognitive Linguistics / Multimodal Analysis/brain and language
+
 contact details: Pegah.merrikhiii@gmail.com
 whatsapp +905369574614
 https://www.linkedin.com/in/dr-pegah-merrikhi-98a7aa105/tr?originalSubdomain=tr
