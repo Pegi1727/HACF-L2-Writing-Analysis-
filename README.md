@@ -110,7 +110,7 @@ For questions regarding the **Multimodal Mapping Matrix (MMM)**, annotated corpu
 
 * **GitHub Repository:** HACF-L2-Writing-Analysis-
 
-* **Permanent Research DOI:** https:// DOI: 10.5281/zenodo.21899855
+* **Permanent Research DOI:**[ https:// DOI: 10.5281/zenodo.21899855](https://doi.org/10.5281/zenodo.21899855)
 * **Researcher:** Dr. Pegah Merrikhi
 * **Affiliation:** Independent Researcher
 * **Field:** Applied Linguistics / Cognitive Linguistics / Multimodal Analysis/brain and language
